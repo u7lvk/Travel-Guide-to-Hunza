@@ -2,6 +2,8 @@
 
 A simple, student-made travel guide to Hunza Valley in Gilgit-Baltistan, Pakistan. Browse local highlights and landmarks, or read practical trip-planning information in a responsive, multi-page website.
 
+**Live website:** [Visit the Hunza Valley Travel Guide](https://u7lvk.github.io/Travel-Guide-to-Hunza/)
+
 ## Pages
 
 - **Home** (`index.html`) — Introduction to Hunza Valley and highlights about its mountains, lakes, and culture.
