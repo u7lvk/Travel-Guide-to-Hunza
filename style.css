@@ -1,0 +1,757 @@
+/* ============================================================
+   HUNZA VALLEY TOURIST GUIDE — MASTER STYLESHEET
+   Palette: Forest Green / Light Beige / Warm Terracotta
+   ============================================================ */
+
+:root {
+  --green-900: #1b4332;
+  --green-700: #2d6a4f;
+  --green-500: #40916c;
+  --green-100: #d8f3dc;
+  --beige-50:  #f7f5f0;
+  --beige-100: #f4f1de;
+  --beige-200: #e8e3cf;
+  --accent:    #df9a57;
+  --accent-dark: #c47f3d;
+  --ink:       #243324;
+  --ink-soft:  #5a665a;
+  --white:     #ffffff;
+
+  --font-heading: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body: Georgia, "Times New Roman", serif;
+
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(27, 67, 50, 0.12);
+  --transition: 0.35s ease;
+}
+
+/* ---------- Base Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--beige-50);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--green-900);
+}
+
+a {
+  color: var(--green-700);
+}
+
+/* ============================================================
+   HEADER & STICKY NAVIGATION
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--green-900);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--beige-100);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.brand-mark {
+  color: var(--accent);
+  margin-right: 0.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.35rem;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--beige-100);
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.nav-links a:hover {
+  background-color: rgba(244, 241, 222, 0.15);
+}
+
+.nav-links a.active {
+  background-color: var(--accent);
+  color: var(--green-900);
+  font-weight: 700;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+              transform var(--transition), border-color var(--transition);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--green-900);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border-color: var(--green-700);
+  background-color: transparent;
+  color: var(--green-700);
+}
+
+.btn-outline:hover {
+  background-color: var(--green-700);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   HERO BANNER (index.html)
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 2rem;
+  background: linear-gradient(rgba(15, 35, 26, 0.55), rgba(15, 35, 26, 0.65));
+}
+
+.hero-kicker {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero-title {
+  font-size: clamp(3rem, 9vw, 6rem);
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.hero-sub {
+  max-width: 620px;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   KEY HIGHLIGHTS — FLEXBOX (index.html)
+   ============================================================ */
+.highlights {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+  color: var(--ink-soft);
+}
+
+.highlights-flex {
+  display: flex;
+  gap: 1.75rem;
+  justify-content: center;
+}
+
+.highlight-card {
+  flex: 1 1 0;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(27, 67, 50, 0.2);
+}
+
+.highlight-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.highlight-card h3 {
+  padding: 1.25rem 1.5rem 0.25rem;
+  font-size: 1.35rem;
+}
+
+.highlight-card p {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+/* ---------- Intro strip ---------- */
+.intro-strip {
+  background-color: var(--green-900);
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+}
+
+.intro-strip h2 {
+  color: var(--beige-100);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-strip p {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  color: rgba(244, 241, 222, 0.85);
+}
+
+.intro-strip .btn-outline {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.intro-strip .btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--green-900);
+}
+
+/* ============================================================
+   PAGE INTRO (explore.html / plan.html)
+   ============================================================ */
+.page-intro {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem 1rem;
+  text-align: center;
+}
+
+.page-intro h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.page-intro p {
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   MASONRY GALLERY — CSS GRID (explore.html)
+   ============================================================ */
+.gallery-grid {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  grid-auto-flow: dense;
+  gap: 1.25rem;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  grid-row: span 2;
+}
+
+.card-tall   { grid-row: span 3; }
+.card-wide   { grid-column: span 2; grid-row: span 2; }
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(transparent 30%, rgba(27, 67, 50, 0.92));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.gallery-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h2 {
+  color: var(--white);
+  font-size: 1.4rem;
+  transform: translateY(12px);
+  transition: transform var(--transition);
+}
+
+.card-overlay p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  transform: translateY(12px);
+  transition: transform var(--transition) 0.05s;
+}
+
+.gallery-card:hover .card-overlay h2,
+.gallery-card:hover .card-overlay p {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   SEASONS TABLE (plan.html)
+   ============================================================ */
+.table-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.table-section h2,
+.form-section h2,
+.faq-section h2 {
+  font-size: 1.9rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.seasons-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--beige-100);
+  font-size: 0.98rem;
+}
+
+.seasons-table caption {
+  caption-side: bottom;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  background-color: var(--beige-100);
+}
+
+.seasons-table th,
+.seasons-table td {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border: 1px solid var(--beige-200);
+}
+
+.seasons-table thead th {
+  background-color: var(--green-900);
+  color: var(--beige-100);
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+/* Zebra striping via :nth-child */
+.seasons-table tbody tr:nth-child(odd) {
+  background-color: var(--beige-50);
+}
+
+.seasons-table tbody tr:nth-child(even) {
+  background-color: var(--green-100);
+}
+
+.seasons-table tbody tr:hover {
+  background-color: rgba(223, 154, 87, 0.25);
+}
+
+/* ============================================================
+   BOOKING FORM (plan.html)
+   ============================================================ */
+.form-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.form-note {
+  text-align: center;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.booking-form fieldset {
+  border: 2px solid var(--green-700);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  background-color: var(--white);
+}
+
+.booking-form legend {
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  background-color: var(--green-700);
+  color: var(--beige-100);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nested-fieldset {
+  border-style: dashed;
+  border-color: var(--accent);
+  margin-top: 1.25rem;
+}
+
+.nested-fieldset legend {
+  background-color: var(--accent);
+  color: var(--green-900);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.booking-form label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--green-900);
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="tel"],
+.booking-form input[type="number"],
+.booking-form input[type="date"],
+.booking-form select,
+.booking-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--beige-200);
+  border-radius: 8px;
+  background-color: var(--beige-50);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+/* Beautiful glow on focus */
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(223, 154, 87, 0.35);
+  background-color: var(--white);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.5rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green-700);
+  cursor: pointer;
+}
+
+.booking-form textarea {
+  margin-top: 1.25rem;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   FAQ ACCORDION — details/summary (plan.html)
+   ============================================================ */
+.faq-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 5rem;
+}
+
+.faq-item {
+  border: 1.5px solid var(--beige-200);
+  border-left: 5px solid var(--green-700);
+  border-radius: 10px;
+  background-color: var(--white);
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+  transition: border-left-color var(--transition);
+}
+
+.faq-item[open] {
+  border-left-color: var(--accent);
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--green-900);
+  position: relative;
+  transition: background-color var(--transition);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none; /* remove default arrow */
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.25rem;
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: transform var(--transition);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+  background-color: var(--beige-100);
+}
+
+.faq-item p {
+  padding: 0 1.25rem 1.25rem;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background-color: var(--green-900);
+  color: rgba(244, 241, 222, 0.85);
+}
+
+.footer-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.site-footer h4 {
+  color: var(--beige-100);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(244, 241, 222, 0.15);
+  font-size: 0.85rem;
+  color: rgba(244, 241, 222, 0.6);
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlights-flex {
+    flex-wrap: wrap;
+  }
+
+  .highlight-card {
+    flex: 1 1 45%;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.88rem;
+  }
+
+  .highlights-flex {
+    flex-direction: column;
+  }
+
+  .highlight-card {
+    flex: 1 1 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 260px;
+  }
+
+  .card-wide {
+    grid-column: span 1;
+  }
+
+  .form-grid,
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .booking-form fieldset {
+    padding: 1.25rem;
+  }
+}

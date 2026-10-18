@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Best seasons, road access and a booking inquiry form for your Hunza Valley trip.">
+  <title>Plan a Hunza Valley Trip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">▲</span>
+        Hunza Guide
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a class="active" href="plan.html" aria-current="page">Plan a Trip</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== SEASONS TABLE ===================== -->
+    <section class="page-intro" aria-labelledby="plan-heading">
+      <h1 id="plan-heading">Plan Your Journey</h1>
+      <p>If you are planning a trip, here is the simple version: when to go, what to pack, and how to get there.</p>
+    </section>
+
+    <section class="table-section" aria-labelledby="seasons-heading">
+      <h2 id="seasons-heading">Best Travel Seasons</h2>
+      <div class="table-wrap">
+        <table class="seasons-table">
+          <caption>Average conditions along the Karakoram Highway (Karimabad area)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Season</th>
+              <th scope="col">Months</th>
+              <th scope="col">Avg. Day Temp</th>
+              <th scope="col">Road Accessibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spring (Blossom)</td>
+              <td>March to April</td>
+              <td>12 to 20 °C</td>
+              <td>Open; occasional landslides near Naltar junction</td>
+            </tr>
+            <tr>
+              <td>Summer (Peak)</td>
+              <td>May to August</td>
+              <td>20 to 30 °C</td>
+              <td>Fully open; Khunjerab Pass accessible</td>
+            </tr>
+            <tr>
+              <td>Autumn (Harvest)</td>
+              <td>September to October</td>
+              <td>10 to 22 °C</td>
+              <td>Open; most scenic season, fewer crowds</td>
+            </tr>
+            <tr>
+              <td>Winter</td>
+              <td>November to February</td>
+              <td>5 to 8 °C below freezing</td>
+              <td>Pass closed to Khunjerab; valley routes kept clear</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== BOOKING INQUIRY FORM ===================== -->
+    <section class="form-section" aria-labelledby="form-heading">
+      <h2 id="form-heading">Booking Inquiry</h2>
+      <p class="form-note">Tell us about your trip and a local guide will reply within 24 hours.</p>
+
+      <form class="booking-form" action="#" method="post">
+
+        <fieldset>
+          <legend>Step 1: Your Details</legend>
+          <div class="form-grid">
+            <label for="fullname">Full Name
+              <input type="text" id="fullname" name="fullname" placeholder="e.g. Ayesha Khan" required>
+            </label>
+            <label for="email">Email Address
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label for="phone">Phone (optional)
+              <input type="tel" id="phone" name="phone" placeholder="+92 300 0000000">
+            </label>
+            <label for="group-size">Group Size
+              <input type="number" id="group-size" name="group-size" min="1" max="30" value="2">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Step 2: Trip Details</legend>
+          <div class="form-grid">
+            <label for="arrival">Arrival Date
+              <input type="date" id="arrival" name="arrival" required>
+            </label>
+            <label for="departure">Departure Date
+              <input type="date" id="departure" name="departure" required>
+            </label>
+            <label for="season">Preferred Season
+              <select id="season" name="season" required>
+                <option value="">Choose a season</option>
+                <option value="spring">Spring (Cherry Blossom)</option>
+                <option value="summer">Summer (Peak Season)</option>
+                <option value="autumn">Autumn (Golden Hunza)</option>
+                <option value="winter">Winter (Quiet &amp; Snow)</option>
+              </select>
+            </label>
+            <label for="budget">Budget per Person (PKR)
+              <select id="budget" name="budget">
+                <option value="">Select a range</option>
+                <option value="economy">Under 40,000</option>
+                <option value="comfort">40,000 to 80,000</option>
+                <option value="premium">80,000+</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="nested-fieldset">
+            <legend>Experiences you'd like to include</legend>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="experiences" value="forts"> Fort tours (Baltit &amp; Altit)</label>
+              <label><input type="checkbox" name="experiences" value="boating"> Boating on Attabad Lake</label>
+              <label><input type="checkbox" name="experiences" value="khunjerab"> Khunjerab Pass day trip</label>
+              <label><input type="checkbox" name="experiences" value="trekking"> Short trekking (Passu Glacier)</label>
+              <label><input type="checkbox" name="experiences" value="culture"> Homestay &amp; local cuisine</label>
+            </div>
+          </fieldset>
+
+          <label for="message">Anything else we should know?
+            <textarea id="message" name="message" rows="4" placeholder="Dietary needs, fitness level, photography interests..."></textarea>
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-accent">Send Inquiry</button>
+          <button type="reset" class="btn btn-outline">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===================== FAQ ACCORDION (pure HTML/CSS) ===================== -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>Do I need a permit to visit Hunza?</summary>
+        <p>
+          Domestic tourists need no permit. Foreign visitors should travel on a
+          valid Pakistan visa; no additional NOC is required for Hunza itself,
+          though Khunjerab day trips may involve a quick checkpoint registration.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I reach Hunza from Islamabad?</summary>
+        <p>
+          Two main options: a short flight to Gilgit followed by a 2-hour drive,
+          or the longer Karakoram Highway road trip, which usually takes 20 to 24
+          hours depending on stops and road conditions.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is Hunza safe for solo travelers?</summary>
+        <p>
+          Hunza is considered one of the safest regions in Pakistan, with very
+          low crime and famously welcoming locals. Standard travel precautions
+          still apply anywhere.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What should I pack?</summary>
+        <p>
+          Layers are the key. Even in summer, nights can get cold, and the sun is
+          stronger at altitude. Bring comfortable shoes, sunscreen, and any
+          medicine you usually rely on.
+        </p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <section aria-label="About this guide">
+        <h4>Hunza Guide</h4>
+        <p>An independent student-made travel guide to Hunza Valley, Gilgit-Baltistan, Pakistan.</p>
+      </section>
+      <section aria-label="Quick links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Sights &amp; Landmarks</a></li>
+          <li><a href="plan.html">Plan a Trip</a></li>
+        </ul>
+      </section>
+      <section aria-label="Contact information">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:hello@hunzaguide.pk">hello@hunzaguide.pk</a></p>
+        <p>Karimabad, Hunza, Gilgit-Baltistan</p>
+      </section>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Hunza Guide. Made for educational purposes.</p>
+  </footer>
+
+</body>
+</html>
